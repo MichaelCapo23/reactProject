@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.tictactoe {
+  position: relative;
+  right : 2%;
+}
+
 .box {
   width: 80px;
   height: 80px;
@@ -22,6 +27,6 @@
   background-color: grey;
   color: black;
   position: relative;
-  left: 46.5%;
+  left: 46.8%;
   cursor: pointer;
 }

@@ -34,8 +34,9 @@ class App extends Component {
                 }
             }
         }
-
     }
+
+
 
     addResetBtn() {
         return <div className="resetBtn" key="btn">Reset</div>
@@ -51,6 +52,8 @@ class App extends Component {
             player : "X",
         })
     }
+
+
 
     handleClick(index) {
         let newBoard = this.state.board;
@@ -75,18 +78,17 @@ class App extends Component {
 
         const reset = <div className="resetBtn" onClick={() => this.clickedReset()}>reset</div>;
 
-        // const winDiv = <div className="winner"></div>;
-
-
         return (
 
             <div className="container">
-                <h1>tic tac toe</h1>
+                <h1 className="tictactoe">Tic Tac Toe</h1>
                 <div className="board">
                     {Box}
                 </div>
                 {reset}
+                <div className="winMessage"> </div>
             </div>
+
 
         );
     }
