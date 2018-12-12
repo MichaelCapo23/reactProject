@@ -29,9 +29,9 @@ class App extends Component {
             const [a,b,c] = winLines[index];
             if(this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c] && this.state.board[a] !== null) {
                 if(this.state.board[a] === "X") {
-                    alert("player X has won!");
+                    alert(`player 1 (X) has won!`);
                 } else {
-                    alert("player O has won!");
+                    alert(`player 2 (O) has won!`);
                 }
             }
         }
@@ -39,7 +39,6 @@ class App extends Component {
 
     clickedReset = () => {
         let square = this.state.board;
-        console.log(this.state.board);
         for (let i = 0; i < square.length; i++) {
             square[i] = null;
         }
@@ -78,7 +77,7 @@ class App extends Component {
                 <div className="board">
                     {Box}
                 </div>
-                <Reset onClick={this.clickedReset.bind(this)}/>
+                <Reset resetFunction={this.clickedReset.bind(this)}/>
             </div>
         );
     }

@@ -3,12 +3,12 @@ import './restebtn.css'
 
 class Reset extends Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     makeResetBtn = () => {
         return (
-            <button className="resetBtn" onClick={this.props.onClick}>Reset Game</button>
+            <button className="resetBtn" onClick={this.props.resetFunction}>Reset Game</button>
         )
     };
 
