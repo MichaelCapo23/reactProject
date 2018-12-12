@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Reset from './resetbtn';
 import './App.css';
 
 class App extends Component {
@@ -36,23 +37,17 @@ class App extends Component {
         }
     }
 
-
-
-    addResetBtn() {
-        return <div className="resetBtn" key="btn">Reset</div>
-    }
-
-    clickedReset() {
+    clickedReset = () => {
         let square = this.state.board;
-        for(let i = 0; i < square.length; i++) {
+        console.log(this.state.board);
+        for (let i = 0; i < square.length; i++) {
             square[i] = null;
         }
         this.setState({
-            board : square,
-            player : "X",
+            board: square,
+            player: "X",
         })
-    }
-
+    };
 
 
     handleClick(index) {
@@ -74,22 +69,17 @@ class App extends Component {
                      key={index}
                      onClick={() => this.handleClick(index)}>
                     {box}
-                </div>);
-
-        const reset = <div className="resetBtn" onClick={() => this.clickedReset()}>reset</div>;
+                </div>
+        );
 
         return (
-
             <div className="container">
                 <h1 className="tictactoe">Tic Tac Toe</h1>
                 <div className="board">
                     {Box}
                 </div>
-                {reset}
-                <div className="winMessage"> </div>
+                <Reset onClick={this.clickedReset.bind(this)}/>
             </div>
-
-
         );
     }
 }

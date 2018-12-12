@@ -21,12 +21,3 @@
   width: 320px;
 }
 
-.resetBtn {
-  height: 30px;
-  width: 50px;
-  background-color: grey;
-  color: black;
-  position: relative;
-  left: 46.8%;
-  cursor: pointer;
-}

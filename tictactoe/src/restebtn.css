@@ -1,0 +1,9 @@
+.resetBtn {
+    height: 40px;
+    width: 60px;
+    background-color: grey;
+    color: black;
+    position: relative;
+    right: 2%;
+    cursor: pointer;
+}
