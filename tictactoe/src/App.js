@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Reset from './resetbtn';
 import './App.css';
-import Message from "./messages";
 
 class App extends Component {
     constructor(props) {
@@ -9,7 +8,6 @@ class App extends Component {
         this.state = {
             board: Array(9).fill(null),
             player: "X",
-            win : false,
         }
     }
 
@@ -27,20 +25,13 @@ class App extends Component {
             ["2", "4", "6"],
         ];
 
-        for (let index = 0; index < winLines.length; index++) {
-            let winState = this.state.win;
-            const [a, b, c] = winLines[index];
-            if (this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c] && this.state.board[a] !== null) {
-                if (this.state.board[a] === "X") {
-                    winState = true;
-                    this.setState({
-                        win : winState
-                    })
+        for(let index = 0; index < winLines.length; index++) {
+            const [a,b,c] = winLines[index];
+            if(this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c] && this.state.board[a] !== null) {
+                if(this.state.board[a] === "X") {
+                    alert(`player 1 (X) has won!`);
                 } else {
-                    winState = true;
-                    this.setState({
-                        win : winState
-                    })
+                    alert(`player 2 (O) has won!`);
                 }
             }
         }
@@ -54,7 +45,6 @@ class App extends Component {
         this.setState({
             board: square,
             player: "X",
-            win : false
         })
     };
 
@@ -76,12 +66,10 @@ class App extends Component {
             (box, index) =>
                 <div className="box"
                      key={index}
-                     onClick={this.state.win ? '' : () => this.handleClick(index)}>
+                     onClick={() => this.handleClick(index)}>
                     {box}
                 </div>
         );
-
-        const winMessage = `player ${this.state.player === "X" ? "O" : "X"} has won!`;
 
         return (
             <div className="container">
@@ -90,7 +78,6 @@ class App extends Component {
                     {Box}
                 </div>
                 <Reset resetFunction={this.clickedReset.bind(this)}/>
-                <Message className={`winDiv ${this.state.win ? "" : "hidden"}`} message={winMessage}/>
             </div>
         );
     }
