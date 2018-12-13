@@ -21,3 +21,17 @@
   width: 320px;
 }
 
+.hidden {
+    display: none !important;
+}
+
+.winDiv {
+    display: block;
+    width: 20vw;
+    height: 3vh;
+    color: blue;
+    text-align: center;
+    position: relative;
+    left: 38%;
+    font-size: 2vw;
+}
