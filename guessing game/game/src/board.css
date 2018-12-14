@@ -1,0 +1,53 @@
+:root {
+    --cupLeft: 20%;
+    --cupPosition : relative;
+    --buttonTop: 46.5%;
+    --buttonRight: 25%;
+}
+
+.board {
+    height: 500%;
+    width: 80%;
+    margin: auto;
+    border: 2px solid black;
+    margin-top: 5%;
+}
+
+.reset {
+    display: inline-block;
+    position: relative;
+    left: calc(var(--buttonRight) + 0.99%);
+    top: calc(var(--buttonTop) - 10%);
+}
+
+.submit {
+    display: inline-block;
+    position: relative;
+    margin-right: 2%;
+    right: calc(var(--buttonRight) - 1%);
+    top: var(--buttonTop)
+}
+
+.pic1 {
+    height: 50%;
+    width: 20%;
+    transform: rotate(180deg);
+    position: var(--cupPosition);
+    left: var(--cupLeft);
+}
+
+.pic2 {
+    height: 50%;
+    width: 20%;
+    transform: rotate(180deg);
+    position: var(--cupPosition);
+    left: var(--cupLeft);
+}
+
+.pic3 {
+    height: 50%;
+    width: 20%;
+    transform: rotate(180deg);
+    position: var(--cupPosition);
+    left: var(--cupLeft);
+}
