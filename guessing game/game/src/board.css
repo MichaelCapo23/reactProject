@@ -34,6 +34,7 @@
     transform: rotate(180deg);
     position: var(--cupPosition);
     left: var(--cupLeft);
+    transition-duration: 2s;
 }
 
 .pic2 {
@@ -42,6 +43,7 @@
     transform: rotate(180deg);
     position: var(--cupPosition);
     left: var(--cupLeft);
+    transition-duration: 2s;
 }
 
 .pic3 {
@@ -50,4 +52,5 @@
     transform: rotate(180deg);
     position: var(--cupPosition);
     left: var(--cupLeft);
+    transition-duration: 2s;
 }
