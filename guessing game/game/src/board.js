@@ -27,9 +27,19 @@ class Board extends Component {
         // const state2State = state2[0];
         // const state3Value = state2[1];
         if(state1[0] === Object.keys(this.state)[0]){
-            console.log("cv1");
+            if (state2[0] === Object.keys(this.state)[1]) {
+                this.setState = ({
+                    cupValue1: state2[1],
+                    cupValue2: state1[1],
+                })
+            } else {
+                this.setState = ({
+                    cupValue1: state2[1],
+                    cupValue2: state1[1],
+                })
+            }
         } else if(state1[0] === Object.keys(this.state)[1]) {
-            console.log("cv2")
+            
         }
         // this.setState({
         //
