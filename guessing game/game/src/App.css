@@ -12,10 +12,10 @@ body {
 }
 
 .input {
-    position: relative;
-    top: 47%;
-    right: 24%;
+    position: absolute;
+    top: 79.7%;
+    right: 41.8%;
     height: 9%;
-    width: 21.6%;
+    width: 18%;
     font-size: 2vw;
 }

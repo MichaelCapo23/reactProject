@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
+import Cup from './cup'
 import Button from './button'
 import './board.css'
-
-import redCup from './images/slack.png';
 
 class Board extends Component {
     constructor(props) {
@@ -11,9 +10,6 @@ class Board extends Component {
             cupValue1: 1,
             cupValue2: 2,
             cupValue3: 3,
-            moveLeft1: "0px",
-            moveLeft2: "0px",
-            moveLeft3: "0px"
         };
     }
 
@@ -41,7 +37,7 @@ class Board extends Component {
                     cupValue1: state2[1],
                     cupValue2: state1[1],
                     if() {
-                        
+
                     }
                 });
                 this.getLeftFromState();
@@ -105,9 +101,9 @@ class Board extends Component {
     render() {
         return (
             <div className="board">
-                <img style={this.cupval1} className={`pic1`} /*onClick={GuessedCup1}*/ value={this.state.cupValue1} src={redCup}/>
-                <img className={`pic2`} /*onClick={GuessedCup2}*/ value={this.state.cupValue2} src={redCup}/>
-                <img className={`pic3`} /*onClick={GuessedCup3}*/ value={this.state.cupValue3} src={redCup}/>
+                <Cup/>
+                <Cup/>
+                <Cup/>
                 <input className={`input`} placeholder={`guess`}></input>
                 <Button name="submit" text={`submit`}/>
                 <Button name="reset" text={`reset`}/>
