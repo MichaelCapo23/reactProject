@@ -15,42 +15,42 @@
 
 .reset {
     display: inline-block;
-    position: relative;
-    left: calc(var(--buttonRight) + 0.99%);
-    top: calc(var(--buttonTop) - 10%);
+    position: absolute;
+    left: 30%;
+    top: 79.33%;
 }
 
 .submit {
     display: inline-block;
-    position: relative;
+    position: absolute;
     margin-right: 2%;
-    right: calc(var(--buttonRight) - 1%);
-    top: var(--buttonTop)
+    right: 30%;
+    top: 79.3%;
 }
 
-.pic1 {
-    height: 50%;
-    width: 20%;
-    transform: rotate(180deg);
-    position: var(--cupPosition);
-    left: var(--cupLeft);
-    transition-duration: 2s;
-}
+/*.pic1 {*/
+    /*height: 50%;*/
+    /*width: 20%;*/
+    /*transform: rotate(180deg);*/
+    /*position: var(--cupPosition);*/
+    /*left: var(--cupLeft);*/
+    /*transition-duration: 2s;*/
+/*}*/
 
-.pic2 {
-    height: 50%;
-    width: 20%;
-    transform: rotate(180deg);
-    position: var(--cupPosition);
-    left: var(--cupLeft);
-    transition-duration: 2s;
-}
+/*.pic2 {*/
+    /*height: 50%;*/
+    /*width: 20%;*/
+    /*transform: rotate(180deg);*/
+    /*position: var(--cupPosition);*/
+    /*left: var(--cupLeft);*/
+    /*transition-duration: 2s;*/
+/*}*/
 
-.pic3 {
-    height: 50%;
-    width: 20%;
-    transform: rotate(180deg);
-    position: var(--cupPosition);
-    left: var(--cupLeft);
-    transition-duration: 2s;
-}
+/*.pic3 {*/
+    /*height: 50%;*/
+    /*width: 20%;*/
+    /*transform: rotate(180deg);*/
+    /*position: var(--cupPosition);*/
+    /*left: var(--cupLeft);*/
+    /*transition-duration: 2s;*/
+/*}*/
