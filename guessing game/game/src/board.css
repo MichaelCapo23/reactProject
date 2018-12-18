@@ -3,6 +3,7 @@
     --cupPosition : relative;
     --buttonTop: 46.5%;
     --buttonRight: 25%;
+    --transitionDuration: 1s;
 }
 
 .board {
@@ -28,29 +29,46 @@
     top: 79.3%;
 }
 
-/*.pic1 {*/
-    /*height: 50%;*/
-    /*width: 20%;*/
-    /*transform: rotate(180deg);*/
-    /*position: var(--cupPosition);*/
-    /*left: var(--cupLeft);*/
-    /*transition-duration: 2s;*/
-/*}*/
+.start {
+    display: inline-block;
+    position: absolute;
+    right: 32%;
+    top: 69.5%;
+    width: 38vw;
+}
 
-/*.pic2 {*/
-    /*height: 50%;*/
-    /*width: 20%;*/
-    /*transform: rotate(180deg);*/
-    /*position: var(--cupPosition);*/
-    /*left: var(--cupLeft);*/
-    /*transition-duration: 2s;*/
-/*}*/
+.cup {
+    position: absolute;
+    top: 10vh;
+    left: 20vw;
+    height: 39vh;
+    width: 18vw;
+    display : inline-block;
+    transform: rotate(180deg);
+}
 
-/*.pic3 {*/
-    /*height: 50%;*/
-    /*width: 20%;*/
-    /*transform: rotate(180deg);*/
-    /*position: var(--cupPosition);*/
-    /*left: var(--cupLeft);*/
-    /*transition-duration: 2s;*/
-/*}*/
+.position1 {
+    position: absolute;
+    left: 0vw;
+    transition-duration: var(--transitionDuration);
+ }
+
+.position2 {
+    position: absolute;
+    left: 15%;
+    transition-duration: var(--transitionDuration);
+}
+
+.position3 {
+    position: absolute;
+    left: 20vw;
+    transition-duration: var(--transitionDuration);
+}
+
+
+
+
+
+
+
+

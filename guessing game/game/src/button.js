@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import './button.css'
 
+
 class Button extends Component{
     constructor(props) {
         super(props);
     }
 
     render() {
-        return <button className={`btn ${this.props.name}`}>{this.props.text}</button>
+        return <button onClick={this.props.function} className={`btn ${this.props.name}`}>{this.props.text}</button>
     }
 }
 
