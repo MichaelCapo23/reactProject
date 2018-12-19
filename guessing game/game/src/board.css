@@ -3,7 +3,7 @@
     --cupPosition : relative;
     --buttonTop: 46.5%;
     --buttonRight: 25%;
-    --transitionDuration: 1s;
+    --transitionDuration: 0.5s;
 }
 
 .board {
@@ -49,19 +49,19 @@
 
 .position1 {
     position: absolute;
-    left: 0vw;
+    left: 20vw;
     transition-duration: var(--transitionDuration);
  }
 
 .position2 {
     position: absolute;
-    left: 15%;
+    left: 40%;
     transition-duration: var(--transitionDuration);
 }
 
 .position3 {
     position: absolute;
-    left: 20vw;
+    left: 60vw;
     transition-duration: var(--transitionDuration);
 }
 
