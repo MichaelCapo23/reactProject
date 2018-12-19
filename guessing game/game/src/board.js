@@ -7,30 +7,36 @@ class Board extends Component {
         state = {
             cup1: "position1",
             cup2: "position2",
-            cup3: "position3"
+            cup3: "position3",
+            count: 0,
         };
 
 
-    switchPositions = () =>{
-        const cupOptions = ["cup1","cup2","cup3"];
-        let optionArray = ["position1", "position2", "position3"];
-        let randomCup = cupOptions[Math.floor(Math.random()*cupOptions.length)];
-        console.log(randomCup);
-        console.log(this.state);
-        optionArray = optionArray.filter(item=>item !== this.state[randomCup]);
-        let randomClass = optionArray[Math.floor(Math.random()*optionArray.length)];
-        let newClass = this.state[randomCup];
-        let newCup;
-        for(var key in this.state){
-            if(this.state[key] === randomClass){
-                newCup = key;
-                break;
+    switchPositions = () => {
+        if (this.state.count < 20) {
+            const cupOptions = ["cup1", "cup2", "cup3"];
+            let optionArray = ["position1", "position2", "position3"];
+            let randomCup = cupOptions[Math.floor(Math.random() * cupOptions.length)];
+            console.log(randomCup);
+            console.log(this.state);
+            console.log(this.state.count);
+            optionArray = optionArray.filter(item => item !== this.state[randomCup]);
+            let randomClass = optionArray[Math.floor(Math.random() * optionArray.length)];
+            let newClass = this.state[randomCup];
+            let newCup;
+            for (var key in this.state) {
+                if (this.state[key] === randomClass) {
+                    newCup = key;
+                    break;
+                }
             }
-        }
-        this.setState({
-            [randomCup]: randomClass,
-            [newCup]: newClass
-        })
+            this.setState({
+                [randomCup]: randomClass,
+                [newCup]: newClass,
+                count: this.state.count+1,
+            });
+        };
+        window.setTimeout(this.switchPositions, 500);
     };
 
     compareValues = () => {
@@ -41,14 +47,13 @@ class Board extends Component {
         this.setState({
             cup1: "position1",
             cup2: "position2",
-            cup3: "position3"
+            cup3: "position3",
+            count: 0
         })
     };
 
     render = () => {
-
         const {cup1, cup2, cup3} = this.state;
-
         return (
             <div className="board">
                 <Cup className={cup1} number={"1"}/>
