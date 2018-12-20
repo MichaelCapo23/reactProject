@@ -4,23 +4,25 @@ import Button from './button'
 import './board.css'
 
 class Board extends Component {
-        state = {
-            cup1: "position1",
-            cup2: "position2",
-            cup3: "position3",
-            count: 0,
-            userGuess: '',
-        };
+    state = {
+        cup1: "position1",
+        cup2: "position2",
+        cup3: "position3",
+        userGuess: '',
+    };
+
+    count = 0;
 
 
     switchPositions = () => {
-        if (this.state.count < 20) {
+        console.log('Switch Position Called')
+        if (this.count < 20) {
             const cupOptions = ["cup1", "cup2", "cup3"];
             let optionArray = ["position1", "position2", "position3"];
             let randomCup = cupOptions[Math.floor(Math.random() * cupOptions.length)];
             console.log(randomCup);
             console.log(this.state);
-            console.log(this.state.count);
+            console.log(this.count);
             optionArray = optionArray.filter(item => item !== this.state[randomCup]);
             let randomClass = optionArray[Math.floor(Math.random() * optionArray.length)];
             let newClass = this.state[randomCup];
@@ -33,19 +35,21 @@ class Board extends Component {
             }
             this.setState({
                 [randomCup]: randomClass,
-                [newCup]: newClass,
-                count: this.state.count+1,
+                [newCup]: newClass
             });
+            this.count++;
+            window.setTimeout(this.switchPositions, 500);
         };
-        window.setTimeout(this.switchPositions, 500);
     };
 
-    resetState = () => {
+    resetState =() =>{
+        console.log('Reset State Called');
+
+        this.count = 0;
         this.setState({
             cup1: "position1",
             cup2: "position2",
             cup3: "position3",
-            count: 0
         });
     };
 
@@ -72,18 +76,18 @@ class Board extends Component {
 
     render = () => {
         const {cup1, cup2, cup3} = this.state;
-        console.log(this.state.userGuess);
+        console.log('User Guess', this.state.userGuess);
         return (
             <div className="board">
                 <Cup onClick={this.compareValues} userguess={this.state.userGuess} className={cup1} number={"1"}/>
                 <Cup onClick={this.compareValues} userguess={this.state.userGuess} className={cup2} number={"2"}/>
                 <Cup onClick={this.compareValues} userguess={this.state.userGuess} className={cup3} number={"3"}/>
                     <form onSubmit={this.submitted}>
-                        <input onChange={this.handleChange} className={`input`} placeholder={`guess`}></input>
+                        <input onChange={this.handleChange} className={`input`} placeholder={`guess`}/>
                         <Button name="submit" text={`submit`}/>
                     </form>
-                <Button function={this.resetState} name="reset" text={`reset`}/>
-                <Button function={this.switchPositions} name="start" text={`start`}/>
+                <Button func={this.switchPositions} name="start" text={`start`}/>
+                <Button func={this.resetState} name="reset" text={`reset`}/>
             </div>
 
         )

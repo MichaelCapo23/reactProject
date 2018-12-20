@@ -22,7 +22,7 @@ class Cup extends Component {
     render() {
         return (
             <div>
-                <img className={`cup ${this.props.className}`} onClick={this.compareValues} src={redCup}/>
+                <img alt={"cups"} className={`cup ${this.props.className}`} onClick={this.compareValues} src={redCup}/>
             </div>
         )
     }

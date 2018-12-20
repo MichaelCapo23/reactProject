@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Board from './board';
-import Button from './button';
 import './App.css';
 
 class App extends Component {
@@ -21,7 +20,7 @@ class App extends Component {
     return (
         <div className={`top`}>
             <Board/>
-        </div>
+         </div>
     )
   }
 }
