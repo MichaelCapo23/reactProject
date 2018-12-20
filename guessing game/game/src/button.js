@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
-import './button.css'
+import React from 'react';
+import './board.css'
 
-
-class Button extends Component{
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return <button onClick={this.props.function} className={`btn ${this.props.name}`}>{this.props.text}</button>
-    }
-}
+const Button = (props) => {
+        return (
+            <button onClick={props.func} className={`btn ${props.name}`}>{props.text}</button>
+        )
+};
 
 export default Button

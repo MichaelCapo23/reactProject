@@ -27,14 +27,16 @@
     margin-right: 2%;
     right: 30%;
     top: 79.3%;
+    width: 55vw;
 }
+
 
 .start {
     display: inline-block;
     position: absolute;
     right: 32%;
     top: 69.5%;
-    width: 38vw;
+    width: 38vw !important;
 }
 
 .cup {
@@ -65,9 +67,12 @@
     transition-duration: var(--transitionDuration);
 }
 
-
-
-
+.btn {
+    height: 10%;
+    width: 10%;
+    background-color: #7a7a7a;
+    font-size: 1.8rem;
+}
 
 
 
