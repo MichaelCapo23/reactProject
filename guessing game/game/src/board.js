@@ -42,7 +42,7 @@ class Board extends Component {
         };
     };
 
-    resetState =() =>{
+    resetState =(event) =>{
         console.log('Reset State Called');
 
         this.count = 0;
@@ -50,7 +50,8 @@ class Board extends Component {
             cup1: "position1",
             cup2: "position2",
             cup3: "position3",
-        });
+            userGuess: '',
+        })
     };
 
     handleChange = (event) => {
@@ -63,25 +64,21 @@ class Board extends Component {
 
     submitted = (event) => {
         event.preventDefault();
-        console.log("input values: ", this.state);
-
         this.setState({
             cup1: "position1",
             cup2: "position2",
             cup3: "position3",
             count: 0,
-            userGuess: '',
         });
     };
 
     render = () => {
         const {cup1, cup2, cup3} = this.state;
-        console.log('User Guess', this.state.userGuess);
         return (
             <div className="board">
-                <Cup onClick={this.compareValues} userguess={this.state.userGuess} className={cup1} number={"1"}/>
-                <Cup onClick={this.compareValues} userguess={this.state.userGuess} className={cup2} number={"2"}/>
-                <Cup onClick={this.compareValues} userguess={this.state.userGuess} className={cup3} number={"3"}/>
+                <Cup userguess={this.state.userGuess} className={cup1} number={"1"}/>
+                <Cup userguess={this.state.userGuess} className={cup2} number={"2"}/>
+                <Cup userguess={this.state.userGuess} className={cup3} number={"3"}/>
                     <form onSubmit={this.submitted}>
                         <input onChange={this.handleChange} className={`input`} placeholder={`guess`}/>
                         <Button name="submit" text={`submit`}/>

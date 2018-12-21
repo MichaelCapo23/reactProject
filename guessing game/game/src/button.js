@@ -6,5 +6,4 @@ const Button = (props) => {
             <button onClick={props.func} className={`btn ${props.name}`}>{props.text}</button>
         )
 };
-
 export default Button

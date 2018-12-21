@@ -5,14 +5,13 @@ import redCup from './images/slack.png';
 class Cup extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            value: this.props.number,
-        }
     }
 
     compareValues = (event) => {
-        if(this.props.userGuess === this.props.number){
+        debugger;
+        console.log("user guess: ", this.props.userguess);
+        console.log("this.props.number: ", this.props.number);
+        if(this.props.userguess === this.props.number){
             console.log("you win!");
         } else {
             console.log("wrong guess");
