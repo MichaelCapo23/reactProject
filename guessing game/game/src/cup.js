@@ -13,6 +13,9 @@ class Cup extends Component {
         console.log("this.props.number: ", this.props.number);
         if(this.props.userguess === this.props.number){
             console.log("you win!");
+            this.setState({
+                // this.props.hide: false,
+            })
         } else {
             console.log("wrong guess");
         }

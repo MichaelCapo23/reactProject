@@ -74,6 +74,17 @@
     font-size: 1.8rem;
 }
 
+.winMessage {
+    height: 20%;
+    width: 80%;
+    border: 1px solid #5bc0de;
+    position: relative;
+    top: 55%;
+    margin: auto;
 
+}
 
+.hide {
+    display: none;
+}
 
