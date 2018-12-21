@@ -8,6 +8,7 @@ class Board extends Component {
         cup1: "position1",
         cup2: "position2",
         cup3: "position3",
+        hide: true,
         userGuess: '',
     };
 
@@ -76,9 +77,10 @@ class Board extends Component {
         const {cup1, cup2, cup3} = this.state;
         return (
             <div className="board">
-                <Cup userguess={this.state.userGuess} className={cup1} number={"1"}/>
-                <Cup userguess={this.state.userGuess} className={cup2} number={"2"}/>
-                <Cup userguess={this.state.userGuess} className={cup3} number={"3"}/>
+                <Cup hide={this.state.hide} userguess={this.state.userGuess} className={cup1} number={"1"}/>
+                <Cup hide={this.state.hide} userguess={this.state.userGuess} className={cup2} number={"2"}/>
+                <Cup hide={this.state.hide} userguess={this.state.userGuess} className={cup3} number={"3"}/>
+                <div className={`winMessage ${`if ${this.state.hide ? 'hide' : ''}`}`}>You Won!</div>
                     <form onSubmit={this.submitted}>
                         <input onChange={this.handleChange} className={`input`} placeholder={`guess`}/>
                         <Button name="submit" text={`submit`}/>
@@ -86,7 +88,6 @@ class Board extends Component {
                 <Button func={this.switchPositions} name="start" text={`start`}/>
                 <Button func={this.resetState} name="reset" text={`reset`}/>
             </div>
-
         )
     }
 
